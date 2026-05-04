@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    z-index: 1;
+    background-image: linear-gradient(to right top, #202123, #1a1b1c, #141516, #0d0d0e, #020202);
+}
+
+    h1 {
+        font-family: verdana;
+        text-align: center;
+        font-size: 35px;
+        color: white;    
+        text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    }
+    
+
+    h2 {
+        font-style: oblique;
+        font-size: large;
+    }
+p {
+    color: white;
+    text-align: center;
+    font-size: small;
+    font-style: inherit;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+}
+nav {
+    background-image: linear-gradient(to bottom, #141314, #19181a, #1e1d20, #232326, #28282c, #2d2d31, #313236, #36373b, #3c3d40, #434345, #49494a, #4f4f4f);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;   
+}
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+        nav ul li {
+            margin: 15px;
+        }
+            nav ul li a {
+                Color: white;
+                text-decoration: none;
+            }
+                nav ul li a:hover {
+                    Color: #565658;
+                    
+                }
+section {
+    text-align: center;
+    padding: 80px 20px;
+}
+form input, form textarea {
+    padding: 10px;
+    border: 1px dashed solid #ccc;
+    border-radios: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.conteudo {
+
+    padding-bottom: 30px;
+    margin-top: 80px;
+    padding-top: 80px;
+    text-align: center;
+    height: 600px;
+    background-image: url('../img/principal.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; /* estica para preencher exatamente */
+}
+    .conteudo h1 {
+        font-family: verdana;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+        font-family: Cambria, serif; 
+    }
+    .conteudo p {
+        color: white;
+        text-align: center;
+        font-size: small;
+        font-style: inherit;
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    }
+.conteudovideo {  
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: #062d57;
+}
+.conteudo2 {
+    
+     background-color: #0a223b;
+     padding-top: 80px;
+     text-align: center;
+     padding-bottom: 30px;
+
+}
+    .conteudo2 h1 {
+        font-family: verdana;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+        font-family: Cambria, serif; 
+    }
+    .conteudo2 p {
+        color: white;
+        text-align: center;
+        font-size: small;
+        font-style: inherit;
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    }
+.conteudo3 {
+    
+     background-color: #040e18;
+     padding-top: 80px;
+     text-align: center;
+     padding-bottom: 30px;
+
+}
+    .conteudo3 h1 {
+        font-family: verdana;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+        font-family: Cambria, serif; 
+    }
+    .conteudo3 p {
+        color: white;
+        text-align: center;
+        font-size: small;
+        font-style: inherit;
+        text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    }
+
+
+
+
+.logoprincipal {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    margin: 0px;
+    width: 150px;
+    height: 150px;
+}
+
+.botoes1 {
+  background-color: #007BFF; 
+  width: 150px;
+  color: white;              
+  padding: 10px 20px;       
+  border: 10px;             
+  border-radius: 5px;       
+  cursor: pointer;          
+  font-size: 16px;          
+}
+    .botoes1:hover {
+      background-color: #0056b3; 
+    }
+
+.contato {
+    display: flex;
+    text-align: center;
+}
+
+#footer {
+  background-color: #0F1E3D;
+  background-image: url('../img/footer.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+td {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+  margin: 0 5px;
+}
+
+a:hover {
+  color: #000;
+}
+
+.vantagens {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.vantagens h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #1f1d1d;
+}
+
+.vantagens ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.vantagens li {
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #201d1d;
+}
+
+.vantagens li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+#sugestoes {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#sugestoes h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#sugestoes p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.contato {
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: -5px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.podcast {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.podcast table {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.podcast td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.podcast td:last-child {
+  text-align: right;
+}
+
+.podcast a {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
