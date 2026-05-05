@@ -9,69 +9,77 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
-    <!-- SEU CSS ORIGINAL (mantido quase intacto) -->
+    <!-- SEU CSS ORIGINAL (mantido) -->
     <link rel="stylesheet" href="./css/style.css">
     
-    <!-- Ajustes extras para compatibilidade com Bootstrap e responsividade (sem perder o estilo original) -->
+    <!-- Ajustes de correção (sem perder o estilo original) -->
     <style>
-        /* Remove o estilo do nav original que será substituído pela navbar Bootstrap */
-        nav {
+        /* Remove o estilo do nav original que será substituído */
+        nav:not(.navbar) {
             all: unset;
         }
-        /* Mantém background do body e cores originais */
-        body {
-            background-image: linear-gradient(to right top, #202123, #1a1b1c, #141516, #0d0d0e, #020202);
-            margin: 0;
-            padding: 0;
+        
+        /* CORREÇÃO 1: Botão hambúrguer VISÍVEL (ícone branco) */
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
         }
-        /* Corrige scroll para âncoras não ficarem atrás da navbar fixa */
-        .conteudo, .conteudovideo, .conteudo2, .conteudo3, #sobre, #podcast, #contato, #sugestoes {
-            scroll-margin-top: 70px;
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
         }
-        /* Mantém as imagens responsivas */
-        img, video {
-            max-width: 100%;
-            height: auto;
+        
+        /* CORREÇÃO 2: Scroll suave para âncoras não ficarem atrás da navbar */
+        html {
+            scroll-padding-top: 80px;
+            scroll-behavior: smooth;
         }
-        /* Ajusta a largura máxima do conteúdo de vantagens para não quebrar em telas pequenas */
+        
+        /* CORREÇÃO 3: Garantir que as seções não sobreponham umas às outras no mobile */
+        .conteudo, .conteudovideo, .conteudo2, .conteudo3 {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Ajuste específico para o container de vantagens não invadir a próxima seção */
         .vantagens {
+            margin-bottom: 0;
+            padding-bottom: 20px;
+        }
+        
+        /* Garante que o grid do Bootstrap funcione sem conflitos */
+        .container {
             max-width: 100%;
-            padding: 20px;
         }
-        .vantagens ul {
-            text-align: left;
-            display: block;
+        
+        /* Mantém a imagem de fundo do conteudo */
+        .conteudo {
+            background-size: cover;
+            background-position: center;
         }
-        /* Garante que o formulário no estilo original não fique desalinhado com o grid Bootstrap */
+        
+        /* Ajuste para o formulário não ficar estranho */
         .contato form {
             width: 100%;
         }
-        /* Mantém o fundo da tabela de podcast conforme seu CSS */
-        .podcast table {
-            background: transparent;
+        
+        /* Corrige cor dos links do footer */
+        #footer a {
+            color: #ccc;
         }
-        /* Ajuste extra para o footer não perder a imagem de fundo */
-        #footer {
-            background-size: cover;
-            background-position: right;
-        }
-        /* Para não quebrar o layout do card de vantagens */
-        .list-group-item {
-            background-color: transparent !important;
-            border: none;
-            color: inherit;
+        #footer a:hover {
+            color: white;
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== NAVBAR BOOTSTRAP RESPONSIVA (com as cores originais do seu menu) ========== -->
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to bottom, #141314, #19181a, #1e1d20, #232326, #28282c, #2d2d31, #313236, #36373b, #3c3d40, #434345, #49494a, #4f4f4f); padding: 15px;">
+    <!-- ========== NAVBAR BOOTSTRAP RESPONSIVA (com botão hambúrguer VISÍVEL) ========== -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-image: linear-gradient(to bottom, #141314, #19181a, #1e1d20, #232326, #28282c, #2d2d31, #313236, #36373b, #3c3d40, #434345, #49494a, #4f4f4f); padding: 10px 0;">
         <div class="container">
-            <a class="navbar-brand text-white fw-bold" href="#">
-                <img src="./img/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
+                <img src="./img/logo.png" alt="Logo" width="40" height="40" class="d-inline-block me-2" style="border-radius: 50%;">
                 Organize App
             </a>
+            <!-- Botão hambúrguer - AGORA VISÍVEL (ícone branco) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,13 +96,13 @@
     </nav>
 
     <!-- Espaçamento para compensar a navbar fixa -->
-    <div style="height: 80px;"></div>
+    <div style="height: 76px;"></div>
 
-    <!-- ========== SEÇÃO 1 - CONTEÚDO PRINCIPAL (com fundo imagem e grid responsivo) ========== -->
+    <!-- ========== SEÇÃO 1 - CONTEÚDO PRINCIPAL ========== -->
     <div class="conteudo" id="home">
-        <div class="container">
+        <div class="container py-4">
             <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
                     <img src="./img/logo.png" width="200" height="200" class="img-fluid mb-3" alt="Logo Organize">
                     <h1>Organize suas tarefas. Simplifique seu dia.</h1>
                     <p>Gerencie compromissos, metas e obrigações em um só lugar. Um aplicativo simples e eficiente para você nunca mais esquecer o que precisa fazer.</p>
@@ -117,12 +125,12 @@
 
     <!-- ========== SEÇÃO 2 - VÍDEO ========== -->
     <div class="conteudovideo" id="sobre">
-        <div class="container">
+        <div class="container py-5">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
                     <h1>Descubra como transformar sua rotina em 3 minutos</h1>
                     <p>Assista ao vídeo e veja como nosso aplicativo pode ajudar você a organizar tarefas, cumprir metas e ter mais produtividade no dia a dia.</p>
-                    <div class="ratio ratio-16x9 mt-4">
+                    <div class="ratio ratio-16x9 mt-4 shadow rounded">
                         <video controls>
                             <source src="./videos/video.mp4" type="video/mp4">
                             <track kind="subtitles" srclang="pt-br" src="legendas.vtt" label="Português" default>
@@ -136,12 +144,12 @@
 
     <!-- ========== SEÇÃO 3 - PODCAST ========== -->
     <div class="conteudo2" id="podcast">
-        <div class="container">
+        <div class="container py-5">
             <div class="row text-center mb-4">
                 <div class="col">
                     <h1>Leve a organização com você onde estiver</h1>
                     <p>Ouça nosso podcast e descubra dicas práticas para gerenciar tarefas, aumentar o foco e conquistar mais equilíbrio na sua rotina.</p>
-                    <audio controls class="mt-3">
+                    <audio controls class="mt-3 w-100" style="max-width: 500px;">
                         <source src="./audio/podcast.mp3" type="audio/mpeg">
                         Seu navegador não suporta o elemento de áudio.
                     </audio>
@@ -152,22 +160,22 @@
                 <h1>Escute Também!</h1>
                 <p>Dicas práticas para organizar sua rotina</p>
                 <div class="table-responsive">
-                    <table class="table table-dark table-hover" style="background: transparent;">
+                    <table class="table table-dark table-hover" style="background: transparent; width: 100%; max-width: 600px; margin: 0 auto;">
                         <tbody>
                             <tr>
-                                <td><p>Episódio 1: Como começar</p></td>
-                                <td><p>15 min</p></td>
-                                <td><a href="#">Ouvir</a></td>
+                                <td><p class="mb-0">Episódio 1: Como começar</p></td>
+                                <td><p class="mb-0">15 min</p></td>
+                                <td><a href="#" class="btn btn-sm btn-outline-light">Ouvir</a></td>
                             </tr>
                             <tr>
-                                <td><p>Episódio 2: Prioridades</p></td>
-                                <td><p>12 min</p></td>
-                                <td><a href="#">Ouvir</a></td>
+                                <td><p class="mb-0">Episódio 2: Prioridades</p></td>
+                                <td><p class="mb-0">12 min</p></td>
+                                <td><a href="#" class="btn btn-sm btn-outline-light">Ouvir</a></td>
                             </tr>
                             <tr>
-                                <td><p>Episódio 3: Ferramentas</p></td>
-                                <td><p>18 min</p></td>
-                                <td><a href="#">Ouvir</a></td>
+                                <td><p class="mb-0">Episódio 3: Ferramentas</p></td>
+                                <td><p class="mb-0">18 min</p></td>
+                                <td><a href="#" class="btn btn-sm btn-outline-light">Ouvir</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -176,12 +184,12 @@
         </div>
     </div>
 
-    <!-- ========== SEÇÃO 4 - CONTATO ========== -->
+    <!-- ========== SEÇÃO 4 - CONTATO / FEEDBACK ========== -->
     <div class="conteudo3" id="contato">
-        <div class="container">
+        <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <section id="sugestoes">
+                    <section id="sugestoes" style="max-width: 100%; padding: 20px;">
                         <h1>Fale conosco</h1>
                         <p>Dúvidas, sugestões ou feedback? Entre em contato conosco. Respondemos em até 24 horas.</p>
                         <div class="contato">
@@ -207,13 +215,13 @@
     <!-- ========== FOOTER ========== -->
     <footer>
         <div id="footer">
-            <div class="container">
+            <div class="container py-3">
                 <div class="row text-center text-md-start align-items-center">
                     <div class="col-md-4 mb-3 mb-md-0">
-                        <p>Organize APP</p>
+                        <p class="mb-0">Organize APP</p>
                     </div>
                     <div class="col-md-4 mb-3 mb-md-0">
-                        <p>© 2026. Todos os direitos reservados.</p>
+                        <p class="mb-0">© 2026. Todos os direitos reservados.</p>
                     </div>
                     <div class="col-md-4">
                         <a href="#contato">Contato</a> |
@@ -225,7 +233,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript Bundle (para menu responsivo, etc.) -->
+    <!-- Bootstrap JavaScript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
